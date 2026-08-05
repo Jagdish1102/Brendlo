@@ -1,8 +1,10 @@
 // ------- config -------
+// API_BASE_URL comes from config.js (loaded before this file). Update it
+// there once you have a deployed backend, and every endpoint below updates.
 const API = {
-  ADMIN_ME: "http://localhost:8080/api/admin/me",
-  BLOGS: "http://localhost:8080/api/blogs",
-  UPLOAD: "http://localhost:8080/api/files/upload",
+  ADMIN_ME: `${API_BASE_URL}/api/admin/me`,
+  BLOGS: `${API_BASE_URL}/api/blogs`,
+  UPLOAD: `${API_BASE_URL}/api/files/upload`,
 };
 
 function getToken() {

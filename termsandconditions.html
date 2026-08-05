@@ -5,7 +5,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MetaPlus Media</title>
+  <title>Terms & Conditions | Brendlo Software Solutions</title>
+  <link rel="icon" type="image/png" href="/image/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' }
@@ -251,7 +252,9 @@
 <header class="fixed top-4 left-0 right-0 z-50">
   <div class="max-w-6xl mx-auto bg-white/10 dark:bg-white/10 backdrop-blur-xl text-white rounded-full border border-white/20 shadow-lg px-6 py-3 flex justify-between items-center">
     <!-- Logo -->
-    <img src="/image/Bredlo Logo.png" alt="Bredlo Logo" class="h-20 w-auto" />
+    <a href="/index.html#home" aria-label="Brendlo Software Solutions - Home">
+      <img src="/image/Bredlo Logo.png" alt="Bredlo Logo" class="h-20 w-auto" />
+    </a>
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center space-x-6 whitespace-nowrap">
@@ -264,10 +267,10 @@
       </button>
 
       <!-- Menu Items -->
-      <a href="https://www.metaplusmedia.com/index.html#home" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Home</a>
-      <a href="https://www.metaplusmedia.com/AboutUs.html#about" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">About Us</a>
-      <a href="https://www.metaplusmedia.com/Services.html#services" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Services</a>
-      <a href="https://www.metaplusmedia.com/index.html#portfolio" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Portfolio</a>
+      <a href="/index.html#home" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Home</a>
+      <a href="/AboutUs.html#about" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">About Us</a>
+      <a href="/Services.html#services" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Services</a>
+      <a href="/index.html#portfolio" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Portfolio</a>
 
       <!-- Contact Us Button with Icon -->
       <a href="#contact" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] text-white shadow-md hover:shadow-lg transition duration-300">
@@ -302,10 +305,10 @@
   <!-- Mobile Menu Dropdown -->
   <div id="mobile-menu" class="md:hidden hidden bg-white/50 dark:bg-black dark:text-white text-black py-4 backdrop-blur-md rounded-b-xl">
     <div class="container mx-auto px-4 flex flex-col space-y-4">
-      <a href="https://www.metaplusmedia.com/index.html#home" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Home</a>
-      <a href="https://www.metaplusmedia.com/AboutUs.html#about" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">About Us</a>
-      <a href="https://www.metaplusmedia.com/Services.html#services" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Services</a>
-      <a href="https://www.metaplusmedia.com/index.html#portfolio" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Portfolio</a>
+      <a href="/index.html#home" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Home</a>
+      <a href="/AboutUs.html#about" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">About Us</a>
+      <a href="/Services.html#services" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Services</a>
+      <a href="/index.html#portfolio" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Portfolio</a>
       <!-- Contact Us Button -->
       <a href="#contact" class="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] text-white shadow-md hover:shadow-lg transition duration-300">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -722,8 +725,8 @@
 
     <!-- Terms -->
     <div class="flex items-center text-base">
-      <input type="checkbox" required id="terms" class="mr-3 text-[#FF1B6B] focus:ring-[#FF1B6B]" />
-      <label for="terms">I accept the terms</label>
+      <input type="checkbox" required id="acceptTerms" class="mr-3 text-[#FF1B6B] focus:ring-[#FF1B6B]" />
+      <label for="acceptTerms">I accept the terms</label>
     </div>
 
     <!-- Submit Button -->
@@ -752,11 +755,11 @@
     <div>
       <h4 class="text-lg font-semibold mb-4 text-black dark:text-white">Company</h4>
       <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-        <li><a href="https://www.metaplusmedia.com/index.html#home" class="hover:text-[#FF1B6B] transition-colors">Home</a></li>
-        <li><a href="https://www.metaplusmedia.com/AboutUs.html#about" class="hover:text-[#FF1B6B] transition-colors">About Us</a></li>
-        <li><a href="https://www.metaplusmedia.com/index.html#features" class="hover:text-[#FF1B6B] transition-colors">Features</a></li>
-        <li><a href="https://www.metaplusmedia.com/Services.html#services" class="hover:text-[#FF1B6B] transition-colors">Services</a></li>
-        <li><a href="https://www.metaplusmedia.com/index.html#testimonials" class="hover:text-[#FF1B6B] transition-colors">Testimonials</a></li>
+        <li><a href="/index.html#home" class="hover:text-[#FF1B6B] transition-colors">Home</a></li>
+        <li><a href="/AboutUs.html#about" class="hover:text-[#FF1B6B] transition-colors">About Us</a></li>
+        <li><a href="/index.html#features" class="hover:text-[#FF1B6B] transition-colors">Features</a></li>
+        <li><a href="/Services.html#services" class="hover:text-[#FF1B6B] transition-colors">Services</a></li>
+        <li><a href="/index.html#testimonials" class="hover:text-[#FF1B6B] transition-colors">Testimonials</a></li>
       </ul>
     </div>
 
@@ -766,7 +769,7 @@
       <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
         
         <li><a href="#terms" class="hover:text-[#FF1B6B] transition-colors">Terms & Conditions</a></li>
-        <li><a href="https://www.metaplusmedia.com/privacy.html#privacy" class="hover:text-[#FF1B6B] transition-colors">Privacy Policy</a></li>
+        <li><a href="/privacy.html#privacy" class="hover:text-[#FF1B6B] transition-colors">Privacy Policy</a></li>
       </ul>
     </div>
 
