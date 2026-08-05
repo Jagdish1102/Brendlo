@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaPlusMedia - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="login.js"></script>
+</head>
+<body class="min-h-screen w-full bg-black text-white flex items-center justify-center p-4">
+
+  <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 rounded-2xl shadow-2xl overflow-hidden bg-zinc-900">
+
+    <!-- Left: Brand + Form -->
+    <div class="p-8 sm:p-12 flex flex-col justify-center">
+      <!-- Brand -->
+      <div class="mb-8">
+        <div class="flex items-center gap-3">
+          <!-- Logo -->
+          <img id="brandLogo"
+               src="assets/images/met-logo.png"
+               alt="MetaPlusMedia Logo"
+               class="h-10 w-10 rounded-xl object-contain bg-white" />
+
+          <div>
+            <h1 class="text-2xl font-bold tracking-tight">MetaPlusMedia</h1>
+            <p class="text-slate-400 text-sm">Welcome back — sign in to continue</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="text-xl font-semibold mb-2">User Login</h2>
+      <p class="text-slate-400 mb-6">Enter your credentials below.</p>
+
+      <form id="loginForm" class="space-y-5">
+        <!-- Email -->
+        <div class="space-y-1">
+          <label for="email" class="block text-sm font-medium text-slate-300">Email</label>
+          <input type="email" id="email" required
+            class="block w-full rounded-xl border border-slate-700 bg-zinc-800 px-4 py-3 outline-none focus:ring-2 focus:ring-sky-400 transition"
+            placeholder="you@example.com" />
+          <div id="emailError" class="text-sm text-rose-500 hidden">Email is required.</div>
+        </div>
+
+        <!-- Password -->
+        <div class="space-y-1">
+          <label for="password" class="block text-sm font-medium text-slate-300">Password</label>
+          <div class="relative">
+            <input type="password" id="password" required
+              class="block w-full rounded-xl border border-slate-700 bg-zinc-800 px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-sky-400 transition"
+              placeholder="••••••••" />
+            <button type="button" id="togglePassword"
+              class="absolute inset-y-0 right-3 my-auto text-slate-400 hover:text-slate-200"
+              aria-label="Toggle password visibility">
+              👁️
+            </button>
+          </div>
+          <div id="passwordError" class="text-sm text-rose-500 hidden">Password is required.</div>
+        </div>
+
+        <!-- Options -->
+        <div class="flex items-center justify-between">
+          <label class="inline-flex items-center gap-2">
+            <input type="checkbox" id="rememberMe"
+              class="h-4 w-4 rounded border-slate-600 text-sky-600 focus:ring-sky-500" />
+            <span class="text-sm text-slate-400">Remember me</span>
+          </label>
+          <a href="forgot-password.html" class="text-sm text-sky-400 hover:underline">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="loginBtn"
+          class="w-full rounded-xl bg-gradient-to-r from-fuchsia-600 to-sky-400 text-white font-medium px-4 py-3 shadow-lg hover:shadow-xl transition disabled:opacity-60 disabled:cursor-not-allowed">
+          Login
+        </button>
+
+        <!-- Error -->
+        <p id="errorMessage" class="text-sm text-rose-500 bg-rose-900/40 border border-rose-700 rounded-lg p-3 hidden"></p>
+      </form>
+
+      <!-- Footer -->
+      <p class="mt-8 text-xs text-slate-500">
+        © <span id="currentYear"></span> MetaPlusMedia. All rights reserved.
+      </p>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="relative hidden lg:block">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
+           alt="MetaPlusMedia — Login"
+           class="h-full w-full object-cover" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+      <div class="absolute bottom-6 left-6 text-white">
+        <h3 class="text-2xl font-semibold drop-shadow">MetaPlusMedia</h3>
+        <p class="text-sm text-white/90">Creative. Data-driven. Results.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

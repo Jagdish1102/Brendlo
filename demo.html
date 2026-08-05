@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starry Night Gradient Background with Cursor Glow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #0a1020, #000000);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .stars {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .stars::before, .stars::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle, rgba(100, 149, 237, 0.8) 1px, transparent 1px) repeat;
+      background-size: 60px 60px;
+      animation: starMove 300s linear infinite;
+    }
+
+    .stars::after {
+      background-size: 120px 120px;
+      opacity: 0.5;
+      animation-direction: reverse;
+    }
+
+    @keyframes starMove {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-500px, -500px); }
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Star Field -->
+  <div class="stars"></div>
+
+  <!-- Cursor Gradient Glow -->
+  <div id="cursor-glow"
+       class="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+       style="background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.2), transparent 80%);">
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-40 text-center pt-32 text-white">
+    <h1 class="text-4xl font-bold">Starry Background with Cursor Glow</h1>
+    <p class="mt-4 max-w-xl mx-auto text-lg">
+      Deep space background with glowing blue stars and cursor gradient glow.
+    </p>
+  </div>
+
+  <script>
+    const cursorGlow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      cursorGlow.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.2), transparent 80%)`;
+    });
+  </script>
+</body>
+</html>

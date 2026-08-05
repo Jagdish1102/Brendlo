@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaPlus Media</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style type="text/tailwindcss">
+    @layer utilities {
+      @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll {
+        animation: scroll-left 10s linear infinite;
+      }
+    }
+  </style>
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+  };
+</script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      background-color: #09040f;
+    }
+
+    body {
+      background-color: #09040f;
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-slideInLeft {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .animate-slideInRight {
+      animation: slideInRight 1s ease-out forwards;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.6s ease-out both;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomPan {
+      0% {
+        transform: scale(1) translateY(0);
+      }
+
+      100% {
+        transform: scale(1.1) translateY(-10px);
+      }
+    }
+
+    .animate-fadeUp {
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    .animate-zoomPan {
+      animation: zoomPan 20s ease-in-out infinite alternate;
+    }
+
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-500 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-700 {
+      animation-delay: 0.7s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @keyframes fade-in-up {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slide-in-left {
+      0% {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slide-in-right {
+      0% {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 1s ease-out forwards;
+    }
+
+    .animate-slide-in-left {
+      animation: slide-in-left 1s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+      animation: slide-in-right 1s ease-out forwards;
+    }
+  </style>
+  <style>
+    body {
+      margin: 0;
+      background: #0e0e0e;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .slider-wrapper {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 40px 0;
+      background: #1a1a1a;
+    }
+
+    .sliding-text {
+      display: inline-block;
+      font-size: 2rem;
+      padding-left: 100%;
+      animation: slide-left 10s linear infinite;
+      background: linear-gradient(to right, #ff004d, #836fff, #48116c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes slide-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+
+
+
+
+<body class="min-h-screen bg-white text-black dark:bg-black dark:text-white class=" text-white">
+  <div id="siteWrapper" class="brightness-80 dark:brightness-100 transition-all duration-300"></div>
+
+
+<header class="fixed top-4 left-0 right-0 z-50">
+  <div class="max-w-6xl mx-auto bg-white/10 dark:bg-white/10 backdrop-blur-2xl text-white rounded-full border border-white/30 shadow-xl px-8 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="/image/Bredlo Logo.png" alt="Bredlo Logo" class="h-20 w-auto" />
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center space-x-8 whitespace-nowrap">
+      <!-- Dark Mode Toggle -->
+      <button id="darkToggle" class="bg-gray-800 text-white px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300">
+        <svg id="darkToggleIconDesktop" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 14A9 9 0 0121 12.79z" />
+        </svg>
+      </button>
+
+      <!-- Menu Items -->
+      <a href="https://www.metaplusmedia.com/index.html#home" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Home</a>
+      <a href="https://www.metaplusmedia.com/AboutUs.html#about" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">About Us</a>
+      <a href="https://www.metaplusmedia.com/Services.html#services" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Services</a>
+      <a href="https://www.metaplusmedia.com/index.html#portfolio" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Portfolio</a>
+
+      <!-- Contact Us Button -->
+      <a href="#contact" class="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] text-white shadow-md hover:shadow-lg transition duration-300">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16v16H4z" fill="none"></path>
+          <path d="M22 6L12 13 2 6"></path>
+        </svg>
+        Contact Us
+      </a>
+    </nav>
+
+    <!-- Mobile: Dark Mode & Menu Button -->
+    <div class="flex items-center md:hidden gap-4">
+      <!-- Dark Mode Toggle -->
+      <button id="darkToggleMobile" class="bg-gray-800 text-white px-3 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300">
+        <svg id="darkToggleIconMobile" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 14A9 9 0 0121 12.79z" />
+        </svg>
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white/30 dark:bg-black/80 text-black dark:text-white py-4 backdrop-blur-lg rounded-b-xl">
+    <div class="container mx-auto px-4 flex flex-col space-y-4">
+      <a href="https://www.metaplusmedia.com/index.html#home" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Home</a>
+      <a href="https://www.metaplusmedia.com/AboutUs.html#about" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">About Us</a>
+      <a href="https://www.metaplusmedia.com/Services.html#services" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Services</a>
+      <a href="https://www.metaplusmedia.com/index.html#portfolio" class="text-black dark:text-white font-bold hover:text-[#FF1B6B] transition-colors duration-300">Portfolio</a>
+      <!-- Contact Us Button -->
+      <a href="#contact" class="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] text-white shadow-md hover:shadow-lg transition duration-300">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16v16H4z" fill="none"></path>
+          <path d="M22 6L12 13 2 6"></path>
+        </svg>
+        Contact Us
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Optional: Close menu on link click (for better UX)
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+<div class="fixed right-[-60px] bottom-4 z-50 w-[180px] h-[180px] md:w-[240px] md:h-[240px]">
+    <iframe src="https://my.spline.design/genkubgreetingrobot-p8SOi9uJrtYMaBkEda1YVECB/" frameborder="0" width="100%"
+      height="100%" allow="autoplay; fullscreen"
+      style="border: none; background: transparent; border-radius: 1rem;">
+    </iframe>
+  </div>
+<section class="bg-white dark:bg-black pt-32 pb-20 px-4 text-black dark:text-white transition-colors duration-500" id="services">
+
+  <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16">
+    Our <span class="text-[#FF1B6B]">Services</span>
+  </h2>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- Card 1 -->
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" class="w-full h-56 object-cover" alt="SEO Optimization">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Software Development</h3>
+        <p class="text-sm mb-5">Custom software solutions designed to automate processes, improve productivity, and meet your unique business requirements.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Boost Your Brand</a>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Card 2 -->
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="/image/WhatsApp Image 2025-06-04 at 15.05.48_73cc6720.jpg" class="w-full h-56 object-cover" alt="Website Development">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Website Development</h3>
+        <p class="text-sm mb-5">Build fast, responsive, and SEO-friendly websites that deliver exceptional user experiences and help your business grow online.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Get Started Now</a>
+      </div>
+    </div>
+
+ <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" class="w-full h-56 object-cover" alt="Graphic Design">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Graphic Design</h3>
+        <p class="text-sm mb-5">Design eye-catching logos, branding materials, social media creatives, brochures, and marketing assets that make your business stand out.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reseat Your Brand</a>
+      </div>
+    </div>   
+
+
+ <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg" class="w-full h-56 object-cover" alt="Ecommerce Solutions">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Ecommerce Solutions</h3>
+        <p class="text-sm mb-5">We design and develop online stores that are fast, secure, and optimized for sales.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reseat Your Brand</a>
+      </div>
+    </div>
+
+ <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" class="w-full h-56 object-cover" alt="UI/UX Design">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+        <p class="text-sm mb-5">Delivering intuitive and beautiful user interfaces for apps and websites.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reseat Your Brand</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg" class="w-full h-56 object-cover" alt="Social Media Management">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Social Media Management</h3>
+        <p class="text-sm mb-5">We handle your social media presence, boosting engagement and audience growth.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Get Expert Advice</a>
+      </div>
+    </div>
+
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" class="w-full h-56 object-cover" alt="Social Media Management">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Digital Marketing</h3>
+        <p class="text-sm mb-5">Grow your brand through social media marketing and data-driven digital campaigns.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Get Expert Advice</a>
+      </div>
+    </div>
+
+
+   
+ 
+    <!-- Card 4 -->
+    <!-- <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg" class="w-full h-56 object-cover" alt="Video Production">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Video Production</h3>
+        <p class="text-sm mb-5">Professional video creation from concept to final cut tailored to your brand.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Get Stunning Media</a>
+      </div>
+    </div> -->
+
+    <!-- Card 5 -->
+   
+
+    <!-- Card 6 -->
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg" class="w-full h-56 object-cover" alt="Brand Strategy">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Brand Strategy</h3>
+        <p class="text-sm mb-5">We help define your brand’s tone, message, and visual identity for lasting impact.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reseat Your Brand</a>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <!-- <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg" class="w-full h-56 object-cover" alt="Paid Advertising">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Paid Advertising</h3>
+        <p class="text-sm mb-5">Targeted ad campaigns across platforms like Google and Meta to drive ROI.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reach Out Now</a>
+      </div>
+    </div> -->
+
+    <!-- Card 8 -->
+    <!-- <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" class="w-full h-56 object-cover" alt="Email Marketing">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Email Marketing</h3>
+        <p class="text-sm mb-5">Email funnels that nurture your leads and increase conversions effectively.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reach Out Now</a>
+      </div>
+    </div> -->
+
+    <!-- Card 9 -->
+    <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" class="w-full h-56 object-cover" alt="Content Writing">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">SEO Optimization</h3>
+        <p class="text-sm mb-5">Improve your website's search engine rankings with our proven SEO optimization techniques.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reach Out Now</a>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Card 10 -->
+   
+    <!-- Card 11 -->
+    <!-- <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg" class="w-full h-56 object-cover" alt="Analytics & Reports">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Analytics & Reports</h3>
+        <p class="text-sm mb-5">Track progress and ROI with regular campaign reporting and insights.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Reseat Your Brand</a>
+      </div>
+    </div> -->
+
+    <!-- Card 12 -->
+   
+
+    <!-- Card 13 -->
+    <!-- <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" class="w-full h-56 object-cover" alt="Influencer Marketing">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Influencer Marketing</h3>
+        <p class="text-sm mb-5">Partnering with relevant creators to amplify your brand’s message.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Get Expert Advice</a>
+      </div>
+    </div> -->
+
+    <!-- Card 14 -->
+    <!-- <div class="rounded-xl overflow-hidden shadow-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] transition">
+      <img src="https://images.pexels.com/photos/274973/pexels-photo-274973.jpeg" class="w-full h-56 object-cover" alt="Product Photography">
+      <div class="p-6 text-white">
+        <h3 class="text-xl font-semibold mb-3">Product Photography</h3>
+        <p class="text-sm mb-5">Professional product photos that convert visitors into customers.</p>
+        <a href="#contact" class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Get Expert Advice</a>
+      </div>
+    </div> -->
+
+  </div>
+</section> 
+
+<!-- Contact Us Section (Split into Left Image + Right Form) -->
+<section id="contact" class="w-full min-h-screen grid md:grid-cols-2">
+
+  <!-- Left: Contact Info -->
+  <div class="relative text-black dark:text-white flex items-center justify-center px-10 py-20 bg-white dark:bg-black">
+    <!-- Background Image -->
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80"
+      alt="Laptop Desk" class="absolute inset-0 w-full h-full object-cover brightness-110 z-0" />
+
+    <!-- Overlay with light/dark mode logic -->
+    <div class="absolute inset-0 bg-white opacity-80 z-0 dark:bg-black dark:opacity-80"></div>
+
+    <!-- Transparent Card Wrapper -->
+    <div
+      class="relative z-10 max-w-md w-full p-10 rounded-2xl bg-white/80 dark:bg-white/10 backdrop-blur-md border border-white/20 shadow-lg text-black dark:text-white">
+      <h2 class="text-4xl font-bold mb-4">
+        <span class="bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF] bg-clip-text text-transparent">Contact Us</span>
+      </h2>
+
+      <p class="text-black/90 dark:text-white/90 text-base mb-6">We're here to assist with your queries or projects.</p>
+
+      <div class="space-y-5 text-black dark:text-white text-base">
+        <div class="flex items-center gap-4">
+          <i class="fas fa-envelope text-lg"></i>
+          <span>contact@brendlo.com</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fas fa-phone-alt text-lg"></i>
+              <span>Phone: <a href="tel:+918999266049" class="hover:text-[#FF1B6B]">+91 8999266049 / +91 8788711734</a></span>
+        </div>
+        <div class="flex items-start gap-4">
+          <!-- <i class="fas fa-map-marker-alt text-lg pt-1"></i>
+          <span>
+            Office No.2, Meta Plus Media Pvt Ltd., Shital Plaza,<br />
+            Next to ICICI Bank, Model Colony,<br />
+            Shivajinagar, Pune - 411016
+          </span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Contact Form -->
+  <div class="bg-white dark:bg-black text-black dark:text-white flex items-center justify-center px-8 py-20">
+    <form action="https://api.web3forms.com/submit" method="POST" class="w-full max-w-md space-y-8">
+
+      <!-- Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="c493534e-8ff6-4da6-ac14-aa67414dab33" />
+
+      <!-- Honeypot Spam Protection -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+      <!-- Name Inputs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-[1px] rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF]">
+          <input type="text" name="first_name" placeholder="First Name" required
+            class="w-full px-5 py-4 rounded-full bg-white dark:bg-black text-black dark:text-white placeholder-gray-500 dark:placeholder-white text-base focus:outline-none focus:ring-2 focus:ring-[#FF1B6B]" />
+        </div>
+        <div class="p-[1px] rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF]">
+          <input type="text" name="last_name" placeholder="Last Name" required
+            class="w-full px-5 py-4 rounded-full bg-white dark:bg-black text-black dark:text-white placeholder-gray-500 dark:placeholder-white text-base focus:outline-none focus:ring-2 focus:ring-[#FF1B6B]" />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="p-[1px] rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF]">
+        <input type="email" name="email" placeholder="Email" required
+          class="w-full px-5 py-4 rounded-full bg-white dark:bg-black text-black dark:text-white placeholder-gray-500 dark:placeholder-white text-base focus:outline-none focus:ring-2 focus:ring-[#FF1B6B]" />
+      </div>
+
+      <!-- Message -->
+      <div class="p-[1px] rounded-xl bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF]">
+        <textarea name="message" placeholder="Message" rows="5" required
+          class="w-full px-5 py-4 rounded-xl bg-white dark:bg-black text-black dark:text-white placeholder-gray-500 dark:placeholder-white text-base focus:outline-none focus:ring-2 focus:ring-[#FF1B6B]"></textarea>
+      </div>
+
+      <!-- Terms -->
+      <div class="flex items-center text-base">
+        <input type="checkbox" required id="terms" class="mr-3 text-[#FF1B6B] focus:ring-[#FF1B6B]" />
+        <label for="terms">I accept the terms</label>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="p-[2px] rounded-full bg-gradient-to-r from-[#FF1B6B] to-[#45CAFF]">
+        <button type="submit"
+          class="w-full py-4 rounded-full font-semibold text-lg bg-black text-white dark:bg-white dark:text-black hover:opacity-90 transition">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+</section>
+
+ 
+  <!-- Footer -->
+<footer class="bg-white dark:bg-black text-black dark:text-white py-12 transition-colors duration-500">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+    <!-- Logo & Description -->
+    <div>
+      <img src="/image/Bredlo Logo.png" alt="Bredlo Logo" class="h-20 w-auto mb-4" />
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        Brendlo Software Solutions delivers professional website development, software development, SEO, digital marketing, ecommerce, and branding services to help businesses grow online.
+      </p>
+    </div>
+
+    <!-- Company Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4 text-black dark:text-white">Company</h4>
+      <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        <li><a href="https://www.metaplusmedia.com/index.html#home" class="hover:text-[#FF1B6B] transition-colors">Home</a></li>
+        <li><a href="https://www.metaplusmedia.com/AboutUs.html#about" class="hover:text-[#FF1B6B] transition-colors">About Us</a></li>
+        <li><a href="https://www.metaplusmedia.com/index.html#features" class="hover:text-[#FF1B6B] transition-colors">Features</a></li>
+        <li><a href="https://www.metaplusmedia.com/Services.html#services" class="hover:text-[#FF1B6B] transition-colors">Services</a></li>
+        <li><a href="https://www.metaplusmedia.com/index.html#testimonials" class="hover:text-[#FF1B6B] transition-colors">Testimonials</a></li>
+      </ul>
+    </div>
+
+    <!-- Help Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4 text-black dark:text-white">Help</h4>
+      <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+        
+        <li><a href="https://www.metaplusmedia.com/termsandconditions.html#terms" class="hover:text-[#FF1B6B] transition-colors">Terms & Conditions</a></li>
+        <li><a href="https://www.metaplusmedia.com/privacy.html#privacy" class="hover:text-[#FF1B6B] transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4 text-black dark:text-white">Contact</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        <!-- Office No. 2, Shital Plaza, <br />
+        Model Colony, Shivajinagar, Pune - 411016 <br /> -->
+        <span class="block mt-2">Email: <a href="mailto:info@brendlo.com"
+            class="hover:text-[#FF1B6B]">contact@brendlo.com</a></span>
+        <span>Phone: <a href="tel:+918999266049" class="hover:text-[#FF1B6B]">+91 8999266049 / +91 8788711734</a></span>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="mt-12 border-t border-gray-200 dark:border-gray-800 pt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+    © 2026 Brendlo Software Solutions. All rights reserved.
+  </div>
+</footer>
+
+  <!-- Google Map Section -->
+  <!-- Google Map Section (Dark Mode) -->
+  <!-- Google Map Section (Dark Mode Compatible) -->
+  <!-- Google Map Section (Dark Mode Compatible) -->
+  <!-- <section class="py-20 bg-white dark:bg-black text-black dark:text-white transition-colors duration-500">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">
+        Visit Us
+      </h2>
+      <p class="text-center text-black/80 dark:text-white/80 mb-8 max-w-2xl mx-auto" data-aos="fade-up"
+        data-aos-delay="100">
+        Office No.2, Meta Plus Media Pvt Ltd., Shital Plaza, Next to ICICI Bank, Model Colony, Shivajinagar, Pune -
+        411016
+      </p>
+
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-black/10 dark:border-white/10" data-aos="zoom-in"
+        data-aos-delay="200">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.43864852830478!2d73.84056751333101!3d18.528071696977616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf801eb7d595%3A0x45193b4bc5e24fd7!2sShital%20Plaza%2C%20Model%20Colony%2C%20Shivajinagar%2C%20Pune%2C%20Maharashtra%20411016!5e0!3m2!1sen!2sin!4v1748941847315!5m2!1sen!2sin"
+          class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
+          style="border:0; filter: grayscale(100%) invert(90%) contrast(85%);" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        const isPercent = counter.textContent.includes('%');
+        let current = 0;
+        const increment = target / 40; // controls speed
+
+        const updateCount = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current) + (isPercent ? '%' : '+');
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.textContent = target + (isPercent ? '%' : '+');
+          }
+        };
+
+        updateCount();
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.getElementById("testimonialSlides");
+      const dots = document.querySelectorAll(".dot");
+      let currentIndex = 0;
+
+      const goToSlide = index => {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("bg-[#FF1B6B]"));
+        dots[index].classList.add("bg-[#FF1B6B]");
+        currentIndex = index;
+      };
+
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          const index = parseInt(dot.getAttribute("data-index"));
+          goToSlide(index);
+        });
+      });
+
+      // Auto-slide
+      setInterval(() => {
+        const nextIndex = (currentIndex + 1) % dots.length;
+        goToSlide(nextIndex);
+      }, 5000); // 5 seconds
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider = document.getElementById("testimonialCards");
+      const dots = document.querySelectorAll(".testimonial-dot");
+      let current = 0;
+      const total = 3; // Number of "pages" of cards
+
+      function showSlide(index) {
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.replace("bg-white", "bg-white/40"));
+        dots[index].classList.replace("bg-white/40", "bg-white");
+        current = index;
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          const index = +dot.getAttribute("data-index");
+          showSlide(index);
+        });
+      });
+
+      setInterval(() => {
+        showSlide((current + 1) % total);
+      }, 5000);
+    });
+
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      offset: 120,
+      easing: 'ease-in-out',
+    });
+  </script>
+
+  <!-- Fixed WhatsApp & Call Icons -->
+  <!-- Fixed WhatsApp & Call Icons -->
+  <div class="fixed bottom-7 right-[-5px] z-[9999]">
+    <div class="bg-white/10 backdrop-blur-md px-3 py-2 rounded-xl shadow-xl border border-white/20 w-[120px]">
+      <div class="flex gap-1 justify-center items-center">
+
+        
+
+        <!-- WhatsApp -->
+       <a href="https://api.whatsapp.com/send/?phone=918999266049&text=Hi%21+I+would+like+to+know+more+about+your+services.&type=phone_number&app_absent=0."
+   target="_blank"
+   aria-label="Chat on WhatsApp"
+   class="bg-gradient-to-br from-green-500 to-green-700 text-white p-1.5 rounded-full shadow hover:scale-105 transition duration-300">
+  <svg class="w-6 h-5" fill="currentColor" viewBox="0 0 24 24">
+    <path
+      d="M20.52 3.48A11.84 11.84 0 0012 0C5.37 0 .03 5.34 0 11.95a11.9 11.9 0 001.64 6l-1.1 4 4.15-1.09a11.84 11.84 0 0017.83-10A11.8 11.8 0 0020.52 3.48zM12 21.51a9.49 9.49 0 01-4.86-1.31l-.35-.2-2.47.65.66-2.4-.23-.36a9.48 9.48 0 01-1.45-5.04A9.55 9.55 0 0112 2.39a9.45 9.45 0 019.58 9.51 9.54 9.54 0 01-9.58 9.61zm5.21-6.65c-.28-.14-1.68-.83-1.94-.93s-.45-.14-.64.14-.74.93-.9 1.12-.33.21-.61.07a7.68 7.68 0 01-2.26-1.38 8.54 8.54 0 01-1.58-2c-.17-.3 0-.46.13-.61s.3-.34.46-.52a2.06 2.06 0 00.3-.48.52.52 0 000-.5c-.07-.14-.64-1.55-.87-2.12s-.45-.49-.61-.5a5.38 5.38 0 00-.61 0 1.18 1.18 0 00-.85.4A3.5 3.5 0 006.8 9.17a6.08 6.08 0 001.26 4.24 13.71 13.71 0 004.76 4.2c.67.28 1.2.45 1.61.58a3.84 3.84 0 001.76.11 2.85 2.85 0 001.83-1.28 2.31 2.31 0 00.17-1.28c-.07-.13-.25-.21-.53-.35z" />
+  </svg>
+</a>
+
+        <!-- Call -->
+        <a href="tel:8485833169" aria-label="Call Us"
+          class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-1.5 rounded-full shadow hover:scale-105 transition duration-300">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M21.7 16.89l-4.64-2a1.17 1.17 0 00-1.34.27l-2.05 2.5a16.28 16.28 0 01-7.17-7.15l2.5-2a1.18 1.18 0 00.28-1.35l-2-4.62A1.22 1.22 0 005.2 2H2.28A1.24 1.24 0 001 3.23 19.76 19.76 0 0021.77 23a1.25 1.25 0 001.23-1.27v-2.92a1.22 1.22 0 00-.72-1.1z" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const desktopToggle = document.getElementById('darkToggle');
+    const mobileToggle = document.getElementById('darkToggleMobile');
+    const iconDesktop = document.getElementById('darkToggleIconDesktop');
+    const iconMobile = document.getElementById('darkToggleIconMobile');
+
+    const setIcon = (isDark) => {
+      const sun = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+      const moon = '<path d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 14A9 9 0 0121 12.79z"/>';
+
+      if (iconDesktop) iconDesktop.innerHTML = isDark ? sun : moon;
+      if (iconMobile) iconMobile.innerHTML = isDark ? sun : moon;
+    };
+
+    const toggleTheme = () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      setIcon(isDark);
+    };
+
+    if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
+
+    const saved = localStorage.getItem('theme');
+    const isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', isDark);
+    setIcon(isDark);
+  });
+</script>
+
+
+</body>
